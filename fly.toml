@@ -1,4 +1,4 @@
-# fly.toml file generated for siple-fast-pic on 2023-03-05T14:15:50+05:00
+# fly.toml file generated for simple-fast-pic on 2023-03-05T14:53:23+05:00
 
 app = "simple-fast-pic"
 kill_signal = "SIGINT"

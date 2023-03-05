@@ -17,20 +17,20 @@ ENV MODE=${MODE} \
 RUN pip install "poetry==$POETRY_VERSION"
 
 # Copy only requirements to cache them in docker layer
-WORKDIR /code
 COPY poetry.lock pyproject.toml /code/
 
 # Project initialization:
+WORKDIR /code
 RUN poetry config virtualenvs.create false \
   && poetry install $(test "$MODE" != "testing" && echo "--no-dev") --no-interaction --no-ansi
 
 # Creating folders, and files for a project:
-COPY ./../ /code
-COPY .env /code/.env
+COPY ./ /code
+COPY ./deploy/.env /code/.env
 
 EXPOSE 8080
 
 RUN mkdir data
 
-COPY deploy/supervisord.conf /etc/
+COPY ./deploy/supervisord.conf /etc/
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
