@@ -55,7 +55,7 @@ def other(message):
             bot.send_message(message.from_user.id, 'Вам необходимо отправить мне валидный токен доступа! Попробуйте ещё раз.')
         return
 
-    bot.send_message(message.from_user.id, 'Мне не нужно отправлять сообщения :-), лучше пришлите мне изображение')
+    bot.send_message(message.from_user.id, 'Мне не нужно отправлять сообщения текстом :-), лучше пришлите мне изображение')
 
 
 def run():
