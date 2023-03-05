@@ -1,0 +1,23 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<script>
+        function hidePreloader() {
+            var preloader = document.getElementById("preloader");
+            preloader.style.display = 'none';
+        }
+
+</script>
+
+<div class="container">
+    <p>Размер: {{ data.size|filesizeformat }}</p>
+    <p>Дата загрузки: {{ data.modified }}</p>
+</div>
+<div class="container">
+    <div class="alert alert-warning" id="preloader" role="alert">
+        Изображение загружается ...
+    </div>
+    <img src="{{ data.path }}" onload="hidePreloader()"/>
+</div>
+
+{% endblock %}

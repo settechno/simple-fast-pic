@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site_title }}</title>
+
+    <link id="favicon" rel="icon" type="image/x-icon" href="/static/images/favicon.ico"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/static/css/theme.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills pull-right">
+                <li role="presentation" class="active"><a href="/">Главная</a></li>
+                <li role="presentation"><a href="/about">О проекте</a></li>
+            </ul>
+        </nav>
+
+        <h3 class="text-muted">{{ site_title }}</h3>
+    </div>
+
+    {% block content %}{% endblock %}
+
+    <br/>
+    <footer class="footer">
+        <p>&copy; {{ year}} {{ site_name }}</p>
+    </footer>
+
+</div> <!-- /container -->
+</body>
+</html>

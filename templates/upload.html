@@ -1,0 +1,33 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<div class="container">
+    {% if file_path %}
+    <div class="alert alert-success" role="alert">
+        <p><b>Изображение загружено!</b></p>
+        <p>Ссылка на изображение: <a href="{{ file_path }}" target="_blank">{{ file_path }}</a></p>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        <p><b>В процессе загрузки изображения возникла ошибка</b></p>
+        <p>{{ error }}</p>
+    </div>
+    {% endif %}
+
+    <form enctype="multipart/form-data" method="post" action="?">
+        <div class="form-group">
+            <label for="token">Токен доступа к загрузке</label>
+            <input id="token" name="token" type="text" required class="form-control"  aria-label="Введите токен доступа"/>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Изображение</label>
+            <input id="image" name="image" type="file" required class="form-control" aria-label="Выберите изображение"/>
+        </div>
+
+        <button type="submit" class="btn btn-success">Выполнить</button>
+    </form>
+</div>
+{% endblock %}

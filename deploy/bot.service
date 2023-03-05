@@ -1,0 +1,13 @@
+[Unit]
+Description=Bot
+After=network.target
+
+[Service]
+WorkingDirectory=/code
+LimitNOFILE=4096
+ExecStart=poetry run bot
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

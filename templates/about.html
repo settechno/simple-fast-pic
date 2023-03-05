@@ -1,0 +1,12 @@
+{% extends "base_layout.html" %}
+
+{% block content %}
+<h3>Немного о сайте</h3>
+<p>Сайт представляет из себя хранилку изображений на удалённом webdav-сервере.
+Сам сайт изображений не хранит. В качестве webdav-сервера может выступать любой публичный
+(н.р. Облако mail.ru или Яндекс.Диск) или приватный. Настройки подключения к webdav, как и вся конфигурация, находятся в .env файле.
+    Загружать изображения можно либо через web-интерфейс, либо отправлять telegram-боту.</p>
+
+<p>Адрес telegram-бота: <a href="{{bot_link}}" target="_blank">{{bot_link}}</a></p>
+<p>Репозиторий сайта: <a href="https://github.com/settechno/simple-fast-pic" target="_blank">https://github.com/settechno/simple-fast-pic</a></p>
+{% endblock %}
